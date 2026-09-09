@@ -3,21 +3,47 @@
 import { FormEvent, useState } from "react";
 import { contact } from "@/lib/content";
 
-export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+type Status = "idle" | "sending" | "sent" | "error";
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+export function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
     const message = String(data.get("message") || "").trim();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
-    setStatus("sent");
+
+    setStatus("sending");
+
+    try {
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${contact.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _subject: `Portfolio inquiry from ${name}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        },
+      );
+
+      if (!res.ok) throw new Error("Failed to send");
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -92,12 +118,20 @@ export function Contact() {
           </label>
           <button
             type="submit"
-            className="pill focus-ring mt-5 w-full bg-green py-3.5 text-sm text-white hover:bg-green-deep md:w-auto md:px-8"
+            disabled={status === "sending"}
+            className="pill focus-ring mt-5 w-full bg-green py-3.5 text-sm text-white hover:bg-green-deep disabled:opacity-60 md:w-auto md:px-8"
           >
-            Send Message
+            {status === "sending" ? "Sending…" : "Send Message"}
           </button>
           {status === "sent" && (
-            <p className="mt-3 text-sm text-muted">Opening your email client…</p>
+            <p className="mt-3 text-sm font-medium text-green">
+              Message sent to {contact.email}. I’ll reply soon.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="mt-3 text-sm text-red-600">
+              Couldn’t send right now. Email me directly at {contact.email}.
+            </p>
           )}
         </form>
       </div>
