@@ -8,10 +8,10 @@ export function About() {
         <div className="relative mx-auto w-full max-w-[380px]">
           <div className="relative aspect-square overflow-hidden rounded-full border-[6px] border-yellow">
             <Image
-              src="/work/dental-banner-2.jpg"
-              alt="Nikhil's design work showcase"
+              src="/work/nikhil-profile.jpg"
+              alt="Nikhil Dhuriya profile photo"
               fill
-              className="object-cover"
+              className="object-cover object-[center_15%]"
               sizes="380px"
             />
           </div>

@@ -42,14 +42,14 @@ export function Hero() {
           <div className="relative overflow-hidden rounded-[2rem] border-4 border-white shadow-[var(--shadow)]">
             <div className="relative aspect-[4/5] bg-green">
               <Image
-                src="/work/dental-banner-1.jpg"
-                alt="Featured campaign creative by Nikhil"
+                src="/work/nikhil-hero.jpg"
+                alt="Nikhil Dhuriya at his workspace"
                 fill
                 priority
-                className="object-cover object-top opacity-95"
+                className="object-cover object-[center_20%]"
                 sizes="460px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-green/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-green/55 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <p className="text-sm font-semibold text-white">
                   {contact.name}
