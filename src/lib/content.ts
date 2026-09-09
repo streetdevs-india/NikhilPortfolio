@@ -12,11 +12,11 @@ export const contact = {
 export const marqueeItems = [
   "Logo Design",
   "Website Design",
-  "Brand Identity",
+  "Canva Creatives",
   "Campaign Banners",
-  "UI Visuals",
-  "Ecommerce Design",
-  "AI Art Direction",
+  "Uizard UI",
+  "Brand Identity",
+  "AI Tools",
   "Social Creatives",
 ];
 
@@ -40,12 +40,12 @@ export const services = [
 ];
 
 export const aboutTags = [
+  "Canva",
+  "Uizard",
   "Logo Design",
-  "Website UI",
   "Banner Design",
-  "Brand Systems",
-  "AI Graphics",
-  "Next.js Build",
+  "AI Tools",
+  "Website UI",
 ];
 
 export const stats = [
@@ -55,12 +55,12 @@ export const stats = [
 ];
 
 export const tools = [
-  { name: "Figma", level: 92 },
-  { name: "Photoshop", level: 88 },
+  { name: "Canva", level: 94 },
+  { name: "Uizard", level: 88 },
+  { name: "Figma", level: 72 },
+  { name: "AI Tools", level: 90 },
   { name: "Next.js", level: 90 },
-  { name: "Tailwind", level: 93 },
-  { name: "Framer Motion", level: 80 },
-  { name: "AI Image Tools", level: 85 },
+  { name: "Tailwind", level: 92 },
 ];
 
 export type ProjectCard = {
