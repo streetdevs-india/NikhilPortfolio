@@ -59,7 +59,7 @@ export function About() {
               className="pill focus-ring gap-2 bg-yellow px-6 py-3 text-sm text-green hover:bg-yellow-soft"
             >
               Request CV
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green text-xs text-yellow">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green text-xs font-bold text-[#f0a91a]">
                 →
               </span>
             </a>

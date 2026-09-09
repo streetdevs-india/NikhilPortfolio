@@ -46,7 +46,7 @@ export function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="pill focus-ring bg-green px-5 py-2.5 text-sm text-white hover:bg-green-deep"
+          className="pill btn-primary focus-ring px-5 py-2.5 text-sm"
         >
           Contact Me
         </a>

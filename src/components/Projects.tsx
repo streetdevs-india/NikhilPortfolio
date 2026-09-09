@@ -69,7 +69,7 @@ export function Projects() {
           </div>
           <a
             href="#contact"
-            className="pill focus-ring gap-2 bg-green px-5 py-2.5 text-sm text-white hover:bg-green-deep"
+            className="pill btn-primary focus-ring gap-2 px-5 py-2.5 text-sm"
           >
             View All Projects
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-yellow text-xs text-green">
@@ -99,7 +99,7 @@ export function Projects() {
                           sizes="40vw"
                         />
                       </div>
-                      <div className="relative bg-white">
+                      <div className="relative bg-card">
                         <Image
                           src={project.secondaryImage || project.image}
                           alt="GIE logo"
@@ -119,7 +119,7 @@ export function Projects() {
                     />
                   )}
                   <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-green/0 opacity-0 transition-all group-hover:bg-green/25 group-hover:opacity-100">
-                    <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-green shadow">
+                    <span className="rounded-full bg-card px-4 py-2 text-xs font-semibold text-green shadow">
                       Click to enlarge
                     </span>
                   </div>
@@ -149,7 +149,7 @@ export function Projects() {
                     href={project.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green text-yellow hover:bg-green-deep"
+                    className="btn-icon focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
                     aria-label={`Open live site for ${project.title}`}
                   >
                     ↗
@@ -158,7 +158,7 @@ export function Projects() {
                   <button
                     type="button"
                     onClick={() => openLightbox(project)}
-                    className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green text-yellow hover:bg-green-deep"
+                    className="btn-icon focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
                     aria-label={`Enlarge ${project.title}`}
                   >
                     ↗
@@ -180,7 +180,7 @@ export function Projects() {
         >
           <button
             type="button"
-            className="focus-ring absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-lg font-bold text-green"
+            className="focus-ring absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-card text-lg font-bold text-green"
             aria-label="Close preview"
             onClick={() => setLightbox(null)}
           >
@@ -191,7 +191,7 @@ export function Projects() {
             <>
               <button
                 type="button"
-                className="focus-ring absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-green md:left-6"
+                className="focus-ring absolute left-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-card text-green md:left-6"
                 aria-label="Previous image"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -210,7 +210,7 @@ export function Projects() {
               </button>
               <button
                 type="button"
-                className="focus-ring absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-green md:right-6"
+                className="focus-ring absolute right-3 top-1/2 z-10 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-card text-green md:right-6"
                 aria-label="Next image"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -227,7 +227,7 @@ export function Projects() {
           )}
 
           <div
-            className="relative max-h-[88vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-white p-3 shadow-2xl"
+            className="relative max-h-[88vh] w-full max-w-5xl overflow-hidden rounded-3xl bg-card p-3 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative mx-auto aspect-[4/5] max-h-[72vh] w-full md:aspect-[16/10]">
@@ -254,7 +254,7 @@ export function Projects() {
                   href={lightbox.project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="pill focus-ring bg-green px-4 py-2 text-sm text-white"
+                  className="pill btn-primary focus-ring px-4 py-2 text-sm"
                 >
                   Open live site ↗
                 </a>

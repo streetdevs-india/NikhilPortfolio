@@ -13,7 +13,7 @@ export function Services() {
           </div>
           <a
             href="#projects"
-            className="pill focus-ring bg-green px-5 py-2.5 text-sm text-white hover:bg-green-deep"
+            className="pill btn-primary focus-ring px-5 py-2.5 text-sm"
           >
             View All Work →
           </a>
@@ -22,7 +22,7 @@ export function Services() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
             <article key={service.title} className="card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green text-lg font-bold text-yellow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green text-lg font-bold text-[#f0a91a]">
                 0{i + 1}
               </div>
               <h3 className="mt-5 text-xl font-bold text-ink">{service.title}</h3>

@@ -2,7 +2,7 @@ import { tools } from "@/lib/content";
 
 export function Tools() {
   return (
-    <section id="tools" className="bg-white py-16 md:py-20">
+    <section id="tools" className="bg-card py-16 md:py-20">
       <div className="container-x">
         <div className="text-center">
           <p className="section-label mx-auto w-fit">My Favorite Tools</p>
@@ -24,7 +24,7 @@ export function Tools() {
                   background: `conic-gradient(#f0a91a ${tool.level * 3.6}deg, #e8e6e0 0deg)`,
                 }}
               >
-                <div className="flex h-[84px] w-[84px] flex-col items-center justify-center rounded-full bg-white">
+                <div className="flex h-[84px] w-[84px] flex-col items-center justify-center rounded-full bg-card">
                   <span className="text-base font-extrabold text-green">
                     {tool.level}%
                   </span>

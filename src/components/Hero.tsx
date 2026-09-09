@@ -21,16 +21,16 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="pill focus-ring gap-2 bg-green px-6 py-3.5 text-sm text-white hover:bg-green-deep"
+              className="pill btn-primary focus-ring gap-2 px-6 py-3.5 text-sm"
             >
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-yellow text-xs text-green">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-yellow text-xs font-bold text-green">
                 ▶
               </span>
               View My Portfolio
             </a>
             <a
               href="#contact"
-              className="pill focus-ring border-2 border-green bg-white px-6 py-3.5 text-sm text-green hover:bg-green hover:text-white"
+              className="pill focus-ring border-2 border-green bg-card px-6 py-3.5 text-sm font-semibold text-green hover:bg-green hover:!text-[#ffffff]"
             >
               Hire Me
             </a>
@@ -63,13 +63,13 @@ export function Hero() {
             </div>
           </div>
 
-          <span className="absolute -left-2 top-14 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-left-6">
+          <span className="absolute -left-2 top-14 rounded-full bg-card px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-left-6">
             {aboutTags[0]}
           </span>
           <span className="absolute -right-1 top-24 rounded-full bg-yellow px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-right-4">
             {aboutTags[1]}
           </span>
-          <span className="absolute bottom-20 -left-1 rounded-full bg-green px-3 py-1.5 text-xs font-semibold text-white shadow-md md:-left-8">
+          <span className="absolute bottom-20 -left-1 rounded-full bg-green px-3 py-1.5 text-xs font-semibold text-[#ffffff] shadow-md md:-left-8">
             {aboutTags[2]}
           </span>
         </div>

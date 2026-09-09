@@ -86,7 +86,7 @@ export function Contact() {
 
         <form
           onSubmit={onSubmit}
-          className="rounded-[28px] bg-white p-6 text-ink shadow-[var(--shadow)] md:p-8"
+          className="rounded-[28px] bg-card p-6 text-ink shadow-[var(--shadow)] md:p-8"
         >
           <div className="grid gap-4 md:grid-cols-2">
             <label className="block text-sm">
@@ -119,7 +119,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="pill focus-ring mt-5 w-full bg-green py-3.5 text-sm text-white hover:bg-green-deep disabled:opacity-60 md:w-auto md:px-8"
+            className="pill btn-primary focus-ring mt-5 w-full py-3.5 text-sm disabled:opacity-60 md:w-auto md:px-8"
           >
             {status === "sending" ? "Sending…" : "Send Message"}
           </button>

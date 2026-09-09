@@ -17,7 +17,7 @@
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-soft: var(--bg-soft);
-  --color-white: var(--white);
+  --color-card: #ffffff;
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-green: var(--green);
@@ -82,8 +82,28 @@ textarea {
   transform: translateY(-2px);
 }
 
+.btn-primary {
+  background: var(--green);
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background: var(--green-deep);
+  color: #ffffff !important;
+}
+
+.btn-icon {
+  background: var(--green);
+  color: #f0a91a !important;
+}
+
+.btn-icon:hover {
+  background: var(--green-deep);
+  color: #f0a91a !important;
+}
+
 .card {
-  background: var(--white);
+  background: #ffffff;
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
