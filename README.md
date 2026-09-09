@@ -1,6 +1,9 @@
 # Nikhil Dhuriya — AI Graphic Designer Portfolio
 
-Live site (GitHub Pages): https://streetdevs-india.github.io/nikhil-portfolio/
+## Live site
+**https://streetdevs-india.github.io/**
+
+Also mirrored at: https://streetdevs-india.github.io/nikhil-portfolio/
 
 ## Local
 
@@ -11,4 +14,4 @@ npm run dev
 
 ## Stack
 
-Next.js · Tailwind CSS · GSAP · Instrument Serif + Outfit
+Next.js · Tailwind CSS · Poppins · Canva / Uizard / AI tools

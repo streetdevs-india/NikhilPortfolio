@@ -30,10 +30,22 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Detect Pages base
+        id: pages
+        shell: bash
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          if [ "$REPO" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "base=" >> "$GITHUB_OUTPUT"
+          else
+            echo "base=$REPO" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          PAGES_BASE: ${{ steps.pages.outputs.base }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

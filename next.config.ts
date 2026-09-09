@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-const repo = "nikhil-portfolio";
 const isGithubPages = process.env.GITHUB_PAGES === "true";
+const pagesBase = (process.env.PAGES_BASE || "").replace(/^\/|\/$/g, "");
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -9,10 +9,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  ...(isGithubPages
+  ...(isGithubPages && pagesBase
     ? {
-        basePath: `/${repo}`,
-        assetPrefix: `/${repo}/`,
+        basePath: `/${pagesBase}`,
+        assetPrefix: `/${pagesBase}/`,
       }
     : {}),
 };
