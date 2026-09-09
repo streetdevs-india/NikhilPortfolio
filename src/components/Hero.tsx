@@ -61,9 +61,9 @@ export function Hero() {
               {contact.role}
             </p>
             <p className="hero-reveal mt-4 max-w-lg text-base leading-relaxed text-muted md:text-lg">
-              I design brand-aligned web visuals and ship them in production —
-              from client landing pages to ecommerce UI. Now focusing on AI
-              graphic design roles with strong art direction.
+              I design logos, campaign banners, and full client websites —
+              then ship them live. Now targeting AI graphic design roles with
+              strong art direction and production craft.
             </p>
             <div className="hero-reveal mt-8 flex flex-wrap gap-3">
               <a

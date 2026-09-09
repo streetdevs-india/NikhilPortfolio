@@ -1,3 +1,9 @@
+export type WorkImage = {
+  src: string;
+  alt: string;
+  kind?: "site" | "logo" | "banner";
+};
+
 export type Project = {
   id: string;
   number: string;
@@ -9,70 +15,84 @@ export type Project = {
   process: string[];
   deliverables: string[];
   links: { label: string; href: string }[];
-  images: { src: string; alt: string }[];
+  images: WorkImage[];
 };
 
 export const projects: Project[] = [
   {
     id: "mankuu",
     number: "01",
-    label: "Client website · designed & built",
+    label: "Brand + website · designed & built",
     title: "Mankuu Interiors",
     intent:
-      "Lead-focused website for a Punjab interior design brand — hero atmosphere, clear hierarchy, consultation CTAs, and a full responsive build.",
-    role: "Visual design, UI layout, frontend development",
-    tools: ["Figma", "Next.js", "Tailwind CSS"],
-    process: ["Brief", "Visual direction", "UI design", "Build", "Launch"],
+      "End-to-end brand and web for a Punjab interior design client — logo, visual system, and a lead-focused live website.",
+    role: "Logo design, visual design, UI, Next.js build",
+    tools: ["Figma", "Photoshop", "Next.js", "Tailwind CSS"],
+    process: ["Brief", "Brand direction", "Logo", "UI design", "Build", "Launch"],
     deliverables: [
+      "Primary logo & brand mark",
       "Landing hero & section visuals",
-      "Brand-aligned page layouts",
-      "Lead / WhatsApp conversion flows",
+      "Lead / WhatsApp conversion UI",
       "Live production website",
     ],
-    links: [{ label: "Open live site", href: "https://www.mankuuinteriors.in" }],
+    links: [
+      { label: "Open live site", href: "https://www.mankuuinteriors.in" },
+    ],
     images: [
       {
         src: "/work/mankuu-live.jpg",
-        alt: "Live screenshot of Mankuu Interiors website homepage",
+        alt: "Live Mankuu Interiors website homepage",
+        kind: "site",
+      },
+      {
+        src: "/work/manku-logo.png",
+        alt: "Manku Interiors logo designed for the client",
+        kind: "logo",
       },
     ],
   },
   {
     id: "elevator",
     number: "02",
-    label: "Client website · designed & built",
+    label: "Brand + website · designed & built",
     title: "Great India Elevator",
     intent:
-      "Trust-led service website for lift installation, repair, and AMC — strong local SEO landing structure with clear quote CTAs.",
-    role: "Visual design, UI layout, frontend development",
-    tools: ["Figma", "Next.js", "Tailwind CSS"],
-    process: ["Brief", "Visual direction", "UI design", "Build", "Launch"],
+      "Logo and trust-led service website for lift installation, repair, and AMC — designed and shipped for the client.",
+    role: "Logo design, visual design, UI, Next.js build",
+    tools: ["Figma", "Photoshop", "Next.js", "Tailwind CSS"],
+    process: ["Brief", "Brand direction", "Logo", "UI design", "Build", "Launch"],
     deliverables: [
-      "Service landing hero visuals",
-      "Trust & AMC-focused sections",
+      "GIE logo lockup",
+      "Service landing visuals",
       "Quote / call / WhatsApp CTAs",
       "Live production website",
     ],
     links: [
       {
         label: "Open live site",
-        href: "https://www.greatindiaelevator.com",
+        href: "https://www.greatindiaelevators.com",
       },
     ],
     images: [
       {
         src: "/work/elevator-live.jpg",
-        alt: "Live screenshot of Great India Elevator website homepage",
+        alt: "Live Great India Elevator website homepage",
+        kind: "site",
+      },
+      {
+        src: "/work/gie-logo.png",
+        alt: "Great India Elevator GIE logo designed for the client",
+        kind: "logo",
       },
     ],
   },
   {
     id: "kanviraa",
     number: "03",
-    label: "Client website · designed & built",
+    label: "Ecommerce website · designed & built",
     title: "Kanviraa",
     intent:
-      "Ecommerce storefront with clean product presentation, modern commerce UI, and a full Next.js shopping experience.",
+      "Full ecommerce storefront — product presentation, commerce UI, and a complete Next.js shopping experience designed and built for the client.",
     role: "Visual design, ecommerce UI, frontend development",
     tools: ["Figma", "Next.js", "React", "Tailwind CSS"],
     process: ["Brief", "Visual direction", "UI design", "Build", "Launch"],
@@ -86,9 +106,31 @@ export const projects: Project[] = [
     images: [
       {
         src: "/work/kanviraa-live.png",
-        alt: "Live screenshot of Kanviraa ecommerce homepage",
+        alt: "Live Kanviraa ecommerce homepage",
+        kind: "site",
       },
     ],
+  },
+];
+
+export const graphicWork = [
+  {
+    id: "dental-primary",
+    title: "Oral Health Campaign Banner",
+    label: "Client graphic design",
+    blurb:
+      "Healthcare campaign creative — logo mark, icon system, lifestyle photography layout, and on-brand messaging.",
+    src: "/work/dental-banner-1.jpg",
+    alt: "Oral Health is Primary Health campaign banner",
+  },
+  {
+    id: "dental-222",
+    title: "Healthy Smile 2-2-2 Banner",
+    label: "Client graphic design",
+    blurb:
+      "Educational social/print banner explaining the 2-2-2 brushing rule with clean typography and product still-life.",
+    src: "/work/dental-banner-2.jpg",
+    alt: "A simple rule for a healthy smile 2-2-2 banner",
   },
 ];
 
@@ -153,11 +195,11 @@ export const skillGroups = [
   {
     title: "Visual",
     items: [
+      "Logo & brand marks",
       "Layout & hierarchy",
       "Typography",
-      "Color systems",
-      "Brand-aligned UI",
-      "Web & social formats",
+      "Campaign banners",
+      "Web UI visuals",
     ],
   },
   {

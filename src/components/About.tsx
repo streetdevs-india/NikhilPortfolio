@@ -14,16 +14,15 @@ export function About() {
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
             <p>
               I’m Nikhil Dhuriya — a B.Tech CSE (AI &amp; ML) graduate from
-              Noida. Through internships at HCLTech, ZoraDevs, and Abstriq, I
-              designed and shipped real client websites end-to-end: interiors,
-              elevator services, ecommerce, construction, and finance UI.
+              Noida. I’ve designed and built live client websites including
+              Mankuu Interiors, Great India Elevator, and Kanviraa — plus logos
+              and campaign banners for client brands.
             </p>
             <p>
-              That work taught me visual hierarchy, brand constraints, and what
-              survives production. I’m now targeting AI Graphic Designer /
-              Visual Designer roles — bringing art direction, AI creative
-              workflows, and the ability to hand off visuals that developers can
-              actually ship.
+              Internships at HCLTech, ZoraDevs, and Abstriq sharpened how I ship
+              under real constraints. I’m targeting AI Graphic Designer /
+              Visual Designer roles — art direction, AI creative workflows, and
+              visuals that survive production.
             </p>
           </div>
         </div>
