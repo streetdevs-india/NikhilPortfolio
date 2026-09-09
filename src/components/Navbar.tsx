@@ -5,6 +5,7 @@ import { contact } from "@/lib/content";
 
 const links = [
   { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
   { href: "#method", label: "Method" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
