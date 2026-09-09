@@ -1,83 +1,73 @@
-import { contact } from "@/lib/content";
+import Image from "next/image";
+import { aboutTags, contact, stats } from "@/lib/content";
 
 export function About() {
   return (
-    <section id="about" className="relative py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1200px] gap-10 px-5 md:grid-cols-[1.2fr_0.8fr] md:gap-14 md:px-8">
-        <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-2">
-            About
-          </p>
-          <h2 className="font-display mt-3 text-3xl leading-tight tracking-tight md:text-5xl">
-            From shipping websites to art-directing AI visuals.
-          </h2>
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted md:text-lg">
-            <p>
-              I’m Nikhil Dhuriya — a B.Tech CSE (AI &amp; ML) graduate from
-              Noida. I’ve designed and built live client websites including
-              Mankuu Interiors, Great India Elevator, and Kanviraa — plus logos
-              and campaign banners for client brands.
-            </p>
-            <p>
-              Internships at HCLTech, ZoraDevs, and Abstriq sharpened how I ship
-              under real constraints. I’m targeting AI Graphic Designer /
-              Visual Designer roles — art direction, AI creative workflows, and
-              visuals that survive production.
-            </p>
+    <section id="about" className="bg-green py-16 text-white md:py-20">
+      <div className="container-x grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
+        <div className="relative mx-auto w-full max-w-[380px]">
+          <div className="relative aspect-square overflow-hidden rounded-full border-[6px] border-yellow">
+            <Image
+              src="/work/dental-banner-2.jpg"
+              alt="Nikhil's design work showcase"
+              fill
+              className="object-cover"
+              sizes="380px"
+            />
+          </div>
+          <div className="absolute -bottom-3 left-1/2 flex w-[92%] -translate-x-1/2 flex-wrap justify-center gap-2">
+            {aboutTags.slice(0, 4).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-yellow px-3 py-1 text-[11px] font-semibold text-green shadow"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 
-        <aside className="rounded-3xl border border-line bg-surface/70 p-7 backdrop-blur-sm md:p-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
-            Availability
+        <div>
+          <p className="text-sm font-semibold text-yellow">About Me</p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-5xl">
+            Who is <span className="text-yellow">{contact.firstName}?</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80">
+            B.Tech CSE (AI &amp; ML) graduate from Noida. I’ve designed and
+            shipped live client websites — Mankuu Interiors, Great India
+            Elevator, and Kanviraa — along with logos and campaign posters.
+            Internships at HCLTech, ZoraDevs, and Abstriq taught me to deliver
+            under real brand constraints.
           </p>
-          <p className="font-display mt-4 text-3xl leading-snug text-text">
-            Available for full-time, internship, or freelance roles
-          </p>
-          <ul className="mt-8 space-y-5 text-sm text-muted">
-            <li>
-              <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">
-                Location
+
+          <div className="mt-8 grid grid-cols-3 gap-4">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-2xl font-extrabold text-yellow md:text-3xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs text-white/70 md:text-sm">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={`mailto:${contact.email}?subject=Please%20share%20your%20CV`}
+              className="pill focus-ring gap-2 bg-yellow px-6 py-3 text-sm text-green hover:bg-yellow-soft"
+            >
+              Request CV
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green text-xs text-yellow">
+                →
               </span>
-              {contact.location}
-            </li>
-            <li>
-              <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">
-                Email
-              </span>
-              <a
-                href={`mailto:${contact.email}`}
-                className="focus-ring transition-colors hover:text-accent"
-              >
-                {contact.email}
-              </a>
-            </li>
-            <li>
-              <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">
-                Phone
-              </span>
-              <a
-                href={`tel:${contact.phone.replace(/\s/g, "")}`}
-                className="focus-ring transition-colors hover:text-accent"
-              >
-                {contact.phone}
-              </a>
-            </li>
-            <li>
-              <span className="mb-1 block font-mono text-[10px] uppercase tracking-[0.16em] text-accent-2">
-                LinkedIn
-              </span>
-              <a
-                href={contact.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="focus-ring transition-colors hover:text-accent"
-              >
-                linkedin.com/in/nikhil-dhuriya
-              </a>
-            </li>
-          </ul>
-        </aside>
+            </a>
+            <p className="font-script text-3xl text-yellow">
+              {contact.name}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

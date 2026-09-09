@@ -1,37 +1,23 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Outfit, JetBrains_Mono } from "next/font/google";
+import { Poppins, Caveat } from "next/font/google";
 import "./globals.css";
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Nikhil Dhuriya — AI Graphic Designer | Noida",
   description:
-    "AI-native visual designer for brand systems, social creatives, and web visuals. Art direction + AI + product-ready craft.",
-  openGraph: {
-    title: "Nikhil Dhuriya — AI Graphic Designer",
-    description:
-      "Art-directing AI visuals that stay on-brand — and ship cleanly to the web.",
-    locale: "en_IN",
-    type: "website",
-  },
+    "AI Graphic Designer from Noida. Client websites, logos, and campaign creatives — designed and shipped for real brands.",
 };
 
 export default function RootLayout({
@@ -42,12 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrument.variable} ${outfit.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${poppins.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-bg text-text">
-        <div className="site-bg" aria-hidden />
-        {children}
-      </body>
+      <body className="min-h-full bg-bg text-ink">{children}</body>
     </html>
   );
 }

@@ -8,122 +8,98 @@ export function Contact() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    const data = new FormData(e.currentTarget);
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
-    const brief = String(data.get("brief") || "").trim();
-    const timeline = String(data.get("timeline") || "").trim();
-
-    const subject = encodeURIComponent(
-      `Portfolio inquiry from ${name || "someone"}`,
-    );
+    const message = String(data.get("message") || "").trim();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nTimeline: ${timeline}\n\nMessage:\n${brief}`,
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     );
-
     window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
     setStatus("sent");
   }
 
   return (
-    <section id="contact" className="relative py-16 md:py-24">
-      <div className="mx-auto max-w-[760px] px-5 text-center md:px-8">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-2">
-          Contact
-        </p>
-        <h2 className="font-display mt-3 text-3xl leading-tight tracking-tight md:text-5xl">
-          Let’s talk about an AI graphic design role.
-        </h2>
-        <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-          Reach out for full-time, internship, or freelance opportunities. I
-          usually reply within 24 hours.
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href={`mailto:${contact.email}`}
-            className="focus-ring inline-flex min-h-12 items-center rounded-full bg-accent px-6 text-sm font-semibold text-[#1a1208] transition-transform hover:-translate-y-0.5"
-          >
-            Email me
-          </a>
-          <a
-            href={contact.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="focus-ring inline-flex min-h-12 items-center rounded-full border border-line bg-white/5 px-6 text-sm font-medium text-text backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`tel:${contact.phone.replace(/\s/g, "")}`}
-            className="focus-ring inline-flex min-h-12 items-center rounded-full border border-line bg-white/5 px-6 text-sm font-medium text-text backdrop-blur-sm transition-colors hover:border-accent hover:text-accent"
-          >
-            Call
-          </a>
+    <section id="contact" className="bg-green py-16 text-white md:py-20">
+      <div className="container-x grid gap-10 md:grid-cols-[1fr_1.05fr] md:items-start">
+        <div>
+          <p className="text-sm font-semibold text-yellow">Contact</p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-5xl">
+            Let’s build something{" "}
+            <span className="text-yellow">great together</span>
+          </h2>
+          <p className="mt-4 max-w-md text-white/75">
+            Open to full-time, internship, and freelance AI Graphic Designer /
+            Visual Designer roles.
+          </p>
+          <ul className="mt-8 space-y-3 text-sm text-white/85">
+            <li>{contact.email}</li>
+            <li>{contact.phone}</li>
+            <li>{contact.location}</li>
+          </ul>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="pill focus-ring bg-yellow px-5 py-2.5 text-sm font-semibold text-green"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={contact.github}
+              target="_blank"
+              rel="noreferrer"
+              className="pill focus-ring border border-white/30 px-5 py-2.5 text-sm"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
 
         <form
           onSubmit={onSubmit}
-          className="mt-12 grid gap-4 rounded-3xl border border-line bg-surface/70 p-5 text-left backdrop-blur-sm md:p-8"
+          className="rounded-[28px] bg-white p-6 text-ink shadow-[var(--shadow)] md:p-8"
         >
           <div className="grid gap-4 md:grid-cols-2">
             <label className="block text-sm">
-              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                Name
-              </span>
+              <span className="font-medium text-muted">Name</span>
               <input
                 name="name"
                 required
-                className="focus-ring mt-2 w-full rounded-xl border border-line bg-bg/80 px-4 py-3 text-text"
+                className="focus-ring mt-2 w-full rounded-2xl border border-line bg-bg px-4 py-3"
               />
             </label>
             <label className="block text-sm">
-              <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                Email
-              </span>
+              <span className="font-medium text-muted">Email</span>
               <input
                 name="email"
                 type="email"
                 required
-                className="focus-ring mt-2 w-full rounded-xl border border-line bg-bg/80 px-4 py-3 text-text"
+                className="focus-ring mt-2 w-full rounded-2xl border border-line bg-bg px-4 py-3"
               />
             </label>
           </div>
-          <label className="block text-sm">
-            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-              Message
-            </span>
+          <label className="mt-4 block text-sm">
+            <span className="font-medium text-muted">Message</span>
             <textarea
-              name="brief"
+              name="message"
               required
-              rows={4}
-              className="focus-ring mt-2 w-full resize-y rounded-xl border border-line bg-bg/80 px-4 py-3 text-text"
-            />
-          </label>
-          <label className="block text-sm">
-            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-              Timeline
-            </span>
-            <input
-              name="timeline"
-              className="focus-ring mt-2 w-full rounded-xl border border-line bg-bg/80 px-4 py-3 text-text"
+              rows={5}
+              className="focus-ring mt-2 w-full resize-y rounded-2xl border border-line bg-bg px-4 py-3"
             />
           </label>
           <button
             type="submit"
-            className="focus-ring mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-[#1a1208] transition-transform hover:-translate-y-0.5"
+            className="pill focus-ring mt-5 w-full bg-green py-3.5 text-sm text-white hover:bg-green-deep md:w-auto md:px-8"
           >
-            Send message
+            Send Message
           </button>
           {status === "sent" && (
-            <p className="text-sm text-muted">Opening your email client…</p>
+            <p className="mt-3 text-sm text-muted">Opening your email client…</p>
           )}
         </form>
-
-        <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
-          {contact.email} · {contact.phone} · {contact.location}
-        </p>
       </div>
     </section>
   );
