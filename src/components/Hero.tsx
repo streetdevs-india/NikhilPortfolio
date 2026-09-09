@@ -37,35 +37,39 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[460px]">
-          <div className="absolute right-2 top-6 h-[78%] w-[78%] rounded-full bg-yellow md:right-0" />
+        <div className="relative mx-auto w-full max-w-[420px] md:max-w-[460px]">
+          <div className="absolute -right-1 top-8 h-[82%] w-[82%] rounded-full bg-yellow md:right-0" />
           <div className="relative overflow-hidden rounded-[2rem] border-4 border-white shadow-[var(--shadow)]">
-            <div className="relative aspect-[4/5] bg-green">
+            <div className="relative aspect-[4/5] bg-bg-soft">
               <Image
                 src="/work/nikhil-hero.jpg"
-                alt="Nikhil Dhuriya at his workspace"
+                alt="Nikhil Dhuriya — AI Graphic Designer"
                 fill
                 priority
-                className="object-cover object-[center_20%]"
-                sizes="460px"
+                className="object-cover object-[50%_8%] scale-[1.08]"
+                sizes="(max-width: 768px) 90vw, 460px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-green/55 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-sm font-semibold text-white">
+              {/* Soften busy wallpaper on the left without hiding the face */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-[28%] bg-gradient-to-r from-black/25 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-green/50 via-transparent to-black/10" />
+              <div className="absolute bottom-0 left-0 right-0 p-5 pt-16">
+                <p className="text-sm font-semibold text-white drop-shadow">
                   {contact.name}
                 </p>
-                <p className="text-xs text-yellow-soft">{contact.role}</p>
+                <p className="text-xs font-medium text-yellow-soft">
+                  {contact.role}
+                </p>
               </div>
             </div>
           </div>
 
-          <span className="absolute -left-2 top-16 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-left-6">
+          <span className="absolute -left-2 top-14 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-left-6">
             {aboutTags[0]}
           </span>
-          <span className="absolute -right-1 top-28 rounded-full bg-yellow px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-right-4">
+          <span className="absolute -right-1 top-24 rounded-full bg-yellow px-3 py-1.5 text-xs font-semibold text-green shadow-md md:-right-4">
             {aboutTags[1]}
           </span>
-          <span className="absolute bottom-16 -left-1 rounded-full bg-green px-3 py-1.5 text-xs font-semibold text-white shadow-md md:-left-8">
+          <span className="absolute bottom-20 -left-1 rounded-full bg-green px-3 py-1.5 text-xs font-semibold text-white shadow-md md:-left-8">
             {aboutTags[2]}
           </span>
         </div>
